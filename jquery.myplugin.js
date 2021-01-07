@@ -10,5 +10,7 @@ $.fn.myPlugin = function(options) {
         'color': settings.color,
         'fontSize': settings.fontSize
     });
+    console.log(defaults.color);
+    console.log(defaults.fontSize);
     return result;
 }
