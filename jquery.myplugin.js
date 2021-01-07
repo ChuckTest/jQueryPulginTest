@@ -1,12 +1,14 @@
-$.fn.myPlugin = function() {
+$.fn.myPlugin = function(options) {
+    var defaults = {
+        'color': 'red',
+        'fontSize': '12px'
+    }
+    var settings = $.extend(defaults, options);
     //在这里面,this指的是用jQuery选中的元素
     that = this;
-    that.css('color', 'red');
-    that.each(function() {
-        //对每个元素进行操作
-        //'this' means a html element in each funtion
-        //$(this) convert a html element to a jQuery object
-        var $this = $(this)
-        $this.append(' ' + $this.attr('href'));
+    var result = that.css({
+        'color': settings.color,
+        'fontSize': settings.fontSize
     });
+    return result;
 }
